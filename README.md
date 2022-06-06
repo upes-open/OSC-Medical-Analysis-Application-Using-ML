@@ -1,6 +1,6 @@
 # OSC-Medical-Analysis-Application-Using-ML
 
-An CNN based binary classification model to classify X-Ray scans on whether they are suffering from pneumonia or not. It would be trained on the Kaggle dataset mentioned below and wold be with Keras and TensorFlow. The frontend would act as an interface where we would upload images for inference. It would access the model through an api built using python.
+An CNN based binary classification model to classify X-Ray scans on whether they are suffering from pneumonia or not. It would be trained on the Kaggle dataset mentioned below and would be built with Keras and TensorFlow. The frontend would act as an interface where we would upload images for inference. It would access the model through an api built using python.
 
 ## Tech Stack
 
