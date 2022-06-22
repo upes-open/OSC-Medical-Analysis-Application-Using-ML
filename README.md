@@ -8,7 +8,7 @@ An CNN based binary classification model to classify X-Ray scans on whether they
 
 - ML: Tensorflow, Keras, NumPy, Pandas, SciKit-Learn, MatPlotlib
 - Frontend: React.js, HTML, CSS, JavaScript
-- Backend: Flask/FastAPI (left to the contributor's preferences)
+- Backend: FastAPI
 
 ## Data
 
@@ -24,6 +24,19 @@ For the analysis of chest x-ray images, all chest radiographs were initially scr
 
 The model would be a CNN built through Keras and TensorFLow, the architecture of the model is left to the contributor, it is recommended to use a combination of convolution, maxpooling, dense and dropout layer to ensure maximum accuracy and efficiency. Since it is a binary classifier, Binary cross enthropy loss function is recommended.
 
+The current Model uses 2 Convolutional Layers and 2 Dense Layers of 64 nodes and has the following metrics
+    ```loss: 5.8201e-05 - accuracy: 1.0000 - val_accuracy: 0.9505```
+
+The Model input undergoes the following preprocessing
+```python
+    def preprocessing(img):
+    img_array = cv2.imread( img,cv2.IMREAD_GRAYSCALE) #convert image to grayscale
+    
+    new_array = cv2.resize(img_array, (size, size)) #resize image
+
+    # return image 
+    return new_array/256
+```
 ## Frontend
 
 The frontend would be made using react. It would consist of a Form like interface where one can upload an image. The image would then be send to the backend for inference and would await a response from the backend. On recieving the prediction it would display it to the user.
@@ -33,3 +46,26 @@ The frontend would be made using react. It would consist of a Form like interfac
 1. The frontend folder consist of an new react app created using npx create-react-app, it will house the entire frontend that will be used to access the model.
 2. The backend folder will contain the api which will receive photos send buy the frontend and perform inference in them
 3. The ML Model folder will contain the Jupyter notebook used for data processing and training and the saved model.
+
+## Repository Setup
+1. Install Anaconda
+2. Create a new environment using the `environment.yml` file
+    ```conda env create -f environment.yml```
+3. Activate the environment
+    ```conda activate OSC-Medical-Analysis```
+
+## Backend
+The backend uses a simple api created using FastAPI that acceps the images as binary strings and returns the prediction in the following format
+```json
+    {
+        "result": "Potentially Pneumonia", // or Normal
+        "prediction": "95.1230" // model's prediction
+    }
+```
+
+### Backend Setup
+1. Navigate to the backend folder
+   ```cd backend```
+2. Start the server
+    ```uvicorn main:app --reload```
+3. Open http://localhost:8000/docs
