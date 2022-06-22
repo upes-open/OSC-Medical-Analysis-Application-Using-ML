@@ -25,7 +25,7 @@ For the analysis of chest x-ray images, all chest radiographs were initially scr
 The model would be a CNN built through Keras and TensorFLow, the architecture of the model is left to the contributor, it is recommended to use a combination of convolution, maxpooling, dense and dropout layer to ensure maximum accuracy and efficiency. Since it is a binary classifier, Binary cross enthropy loss function is recommended.
 
 The current Model uses 2 Convolutional Layers and 2 Dense Layers of 64 nodes and has the following metrics
-    `loss: 5.8201e-05 - accuracy: 1.0000 - val_accuracy: 0.9505`
+    ```loss: 5.8201e-05 - accuracy: 1.0000 - val_accuracy: 0.9505```
 
 The Model input undergoes the following preprocessing
 ```python
@@ -50,9 +50,9 @@ The frontend would be made using react. It would consist of a Form like interfac
 ## Repository Setup
 1. Install Anaconda
 2. Create a new environment using the `environment.yml` file
-    `conda env create -f environment.yml`
+    ```conda env create -f environment.yml```
 3. Activate the environment
-    `conda activate OSC-Medical-Analysis`
+    ```conda activate OSC-Medical-Analysis```
 
 ## Backend
 The backend uses a simple api created using FastAPI that acceps the images as binary strings and returns the prediction in the following format
@@ -65,7 +65,7 @@ The backend uses a simple api created using FastAPI that acceps the images as bi
 
 ### Backend Setup
 1. Navigate to the backend folder
-    `cd backend`
+   ```cd backend```
 2. Start the server
-    `uvicorn main:app --reload`
+    ```uvicorn main:app --reload```
 3. Open http://localhost:8000/docs
