@@ -56,12 +56,12 @@ The frontend would be made using react. It would consist of a Form like interfac
 
 ## Backend
 The backend uses a simple api created using FastAPI that acceps the images as binary strings and returns the prediction in the following format
-    ```json
+```json
     {
         "result": "Potentially Pneumonia", // or Normal
         "prediction": "95.1230" // model's prediction
     }
-    ```
+```
 
 ### Backend Setup
 1. Navigate to the backend folder
