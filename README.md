@@ -28,15 +28,15 @@ The current Model uses 2 Convolutional Layers and 2 Dense Layers of 64 nodes and
     `loss: 5.8201e-05 - accuracy: 1.0000 - val_accuracy: 0.9505`
 
 The Model input undergoes the following preprocessing
-    ```python
-        def preprocessing(img):
-        img_array = cv2.imread( img,cv2.IMREAD_GRAYSCALE) #convert image to grayscale
-        
-        new_array = cv2.resize(img_array, (size, size)) #resize image
+```python
+    def preprocessing(img):
+    img_array = cv2.imread( img,cv2.IMREAD_GRAYSCALE) #convert image to grayscale
+    
+    new_array = cv2.resize(img_array, (size, size)) #resize image
 
-        # return image 
-        return new_array/256
-    ```
+    # return image 
+    return new_array/256
+```
 ## Frontend
 
 The frontend would be made using react. It would consist of a Form like interface where one can upload an image. The image would then be send to the backend for inference and would await a response from the backend. On recieving the prediction it would display it to the user.
