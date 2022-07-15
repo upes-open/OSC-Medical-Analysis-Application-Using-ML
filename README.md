@@ -69,3 +69,12 @@ The backend uses a simple api created using FastAPI that acceps the images as bi
 2. Start the server
     ```uvicorn main:app --reload```
 3. Open http://localhost:8000/docs
+
+### Frontend Setup
+1. Navigate to the frontend foler
+   ```cd frontend```
+2. Install dependancies
+   ```npm install```
+3. Run frontend server (make sure backend is running before this)
+   ```npm run start```
+   
